@@ -43,10 +43,16 @@ fn main() {
         i += 1;
     }
     println!("i = {}",i);
-    //for
-    let arr = [1,3,5,7,9];
-    for a in arr.iter(){
-        println!("a = {}",a);
+    //for 
+    let mut arr = [1,3,5,7,9];
+    //for a in arr =>for a in arr.into_iter ,move a,but actruelly not
+    //for a in &arr => for a in arr.iter(), ref a 
+    //for a in &mut arr =>for a in arr.iter_mut(),ref and change a
+    {
+        for a in arr{
+            println!("a = {}",a);
+        }
     }
+    println!("arr = {:?}",arr);
     println!("Hello, world!");
 }
